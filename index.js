@@ -1,6 +1,6 @@
-const app = require('./app');
-const config = require('./config/config');
-const logger = require('./config/logger');
+const app = require("./app");
+const config = require("./configs/config");
+const logger = require("./configs/logger");
 
 const server = app.listen(config.port, () => {
   logger.info(`Listening to port ${config.port}`);
@@ -8,7 +8,7 @@ const server = app.listen(config.port, () => {
 const exitHandler = () => {
   if (server) {
     server.close(() => {
-      logger.info('Server closed');
+      logger.info("Server closed");
       process.exit(1);
     });
   } else {
@@ -21,11 +21,11 @@ const unexpectedErrorHandler = (error) => {
   exitHandler();
 };
 
-process.on('uncaughtException', unexpectedErrorHandler);
-process.on('unhandledRejection', unexpectedErrorHandler);
+process.on("uncaughtException", unexpectedErrorHandler);
+process.on("unhandledRejection", unexpectedErrorHandler);
 
-process.on('SIGTERM', () => {
-  logger.info('SIGTERM received');
+process.on("SIGTERM", () => {
+  logger.info("SIGTERM received");
   if (server) {
     server.close();
   }

@@ -1,6 +1,5 @@
 const express = require("express");
 const helmet = require("helmet");
-const xss = require("xss-clean");
 const cors = require("cors");
 const httpStatus = require("http-status");
 

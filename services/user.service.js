@@ -1,5 +1,5 @@
-const httpStatus = require("http-status");
 const { PrismaClient } = require("@prisma/client");
+const httpStatus = require("http-status");
 const { compare, hash } = require("bcryptjs");
 
 const ApiError = require("../utils/ApiError");

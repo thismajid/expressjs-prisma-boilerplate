@@ -1,4 +1,5 @@
 const Joi = require("joi");
+
 const { password } = require("./custom.validation");
 
 const login = {

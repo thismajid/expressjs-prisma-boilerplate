@@ -2,7 +2,7 @@ const express = require("express");
 
 const authRoute = require("./auth.route");
 const docsRoute = require("./docs.route");
-const config = require("../../configs/config");
+const config = require("./../configs/config");
 
 const router = express.Router();
 

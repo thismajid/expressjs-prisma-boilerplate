@@ -9,10 +9,12 @@
   },
   "scripts": {
     "start": "node ./index.js",
-    "dev": "cross-env NODE_ENV=development nodemon ./index.js"
+    "dev": "cross-env NODE_ENV=development nodemon ./index.js",
+    "db:migrate": "npx prisma migrate dev"
   },
   "keywords": [],
   "dependencies": {
+    "@prisma/client": "^4.2.1",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "cross-env": "^7.0.0",
@@ -34,6 +36,7 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.0"
+    "nodemon": "^2.0.0",
+    "prisma": "^4.2.1"
   }
 }

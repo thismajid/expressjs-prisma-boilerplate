@@ -2,6 +2,7 @@ const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 const httpStatus = require("http-status");
+const sanitizer = require("perfect-express-sanitizer");
 
 const config = require("./configs/config");
 const morgan = require("./configs/morgan");
@@ -30,7 +31,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // sanitize request data
-app.use(xss());
+app.use(
+  sanitizer.clean({
+    xss: true,
+    sql: true,
+  })
+);
 
 // v1 api routes
 app.use("/", routes);

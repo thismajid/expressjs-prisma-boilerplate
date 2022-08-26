@@ -6,7 +6,7 @@ const sanitizer = require("perfect-express-sanitizer");
 
 const config = require("./configs/config");
 const morgan = require("./configs/morgan");
-const routes = require("./routes/v1");
+const routes = require("./routes");
 const { errorConverter, errorHandler } = require("./middlewares/error");
 const ApiError = require("./utils/ApiError");
 
@@ -38,7 +38,7 @@ app.use(
   })
 );
 
-// v1 api routes
+// api routes
 app.use("/", routes);
 
 // send back a 404 error for any unknown api request

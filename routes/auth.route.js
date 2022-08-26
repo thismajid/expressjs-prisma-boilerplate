@@ -6,12 +6,12 @@ const authController = require("../../controllers/auth.controller");
 
 const router = express.Router();
 
+router.post("/login", validate(authValidation.login), authController.login);
 router.post(
   "/register",
   validate(authValidation.register),
   authController.register
 );
-router.post("/login", validate(authValidation.login), authController.login);
 
 module.exports = router;
 
@@ -64,8 +64,6 @@ module.exports = router;
  *               properties:
  *                 user:
  *                   $ref: '#/components/schemas/User'
- *                 tokens:
- *                   $ref: '#/components/schemas/AuthTokens'
  *       "400":
  *         $ref: '#/components/responses/DuplicateEmail'
  */

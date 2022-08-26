@@ -35,11 +35,14 @@ module.exports = router;
  *           schema:
  *             type: object
  *             required:
- *               - name
+ *               - firstname
+ *               - lastname
  *               - email
  *               - password
  *             properties:
- *               name:
+ *               firstname:
+ *                 type: string
+ *               lastname:
  *                 type: string
  *               email:
  *                 type: string
@@ -51,7 +54,8 @@ module.exports = router;
  *                 minLength: 8
  *                 description: At least one number and one letter
  *             example:
- *               name: fake name
+ *               firstname: fake name
+ *               lastname: fake name
  *               email: fake@example.com
  *               password: password1
  *     responses:
@@ -101,6 +105,9 @@ module.exports = router;
  *             schema:
  *               type: object
  *               properties:
+ *                 message:
+ *                    type: string
+ *                    example: success
  *                 user:
  *                   $ref: '#/components/schemas/User'
  *                 tokens:

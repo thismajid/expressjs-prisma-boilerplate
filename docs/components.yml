@@ -8,17 +8,21 @@ components:
         email:
           type: string
           format: email
-        name:
+        firstname:
+          type: string
+        lastname:
           type: string
       example:
-        id: 5ebac534954b54139806c112
+        id: 1
+        firstname: fake name
+        lastname: fake name
         email: fake@example.com
-        name: fake name
+        password: fake password
 
     Token:
       type: object
       properties:
-        token:
+        access_token:
           type: string
         expires:
           type: string
@@ -30,7 +34,7 @@ components:
     AuthTokens:
       type: object
       properties:
-        access:
+        access_token:
           $ref: "#/components/schemas/Token"
 
     Error:

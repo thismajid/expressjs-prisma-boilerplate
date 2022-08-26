@@ -1,12 +1,13 @@
 const httpStatus = require("http-status");
 
 const authService = require("./../services/auth.service");
+const jwtService = require("./../services/jwt.service");
 
 const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const user = await authService.login(email, password);
-    const access_token = await authService.generateAuthToken(user);
+    const access_token = await jwtService.generateAuthToken(user);
     res.json({
       message: "success",
       data: {
